@@ -1,18 +1,24 @@
 package ijse.aws.testAWS.api;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import ijse.aws.testAWS.data.Message;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
+
 @RestController
-@RequestMapping("/api")
+
 public class MyRestController
 {
 
-    @GetMapping(path = "/hello", produces="text/plain")
-    public ResponseEntity<Object> sayHello(){
-        return new ResponseEntity<Object>("Hello World !!!", HttpStatus.OK);
+    @GetMapping(path = "/api/hello")
+    public Message sayHello(){
+        Message msg=new Message();
+        msg.setSender("Server");
+        msg.setMessage("Hello World");
+        msg.setSentTime(new Date());
+        return msg;
     }
 }
+
