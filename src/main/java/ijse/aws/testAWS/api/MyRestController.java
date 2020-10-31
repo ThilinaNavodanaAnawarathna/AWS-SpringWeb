@@ -1,4 +1,4 @@
-package ijse.aws.testAWS;
+package ijse.aws.testAWS.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
